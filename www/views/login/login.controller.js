@@ -7,8 +7,8 @@
     .controller('LoginCtrl' ,['$scope','localStorageService','$ionicPopup','$state',function ($scope,localStorageService,$ionicPopup,$state) {
       var USER_KEY='User';
       $scope.user={
-        username:'xiaohai',
-        password:'123456'
+        username:'',
+        password:''
       };
       $scope.login=function () {
         var account = localStorageService.get(USER_KEY,{
