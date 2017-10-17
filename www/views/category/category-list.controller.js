@@ -1,7 +1,13 @@
 (function () {
   'use strict'
   angular.module('starter.controllers')
-    .controller('CategoryListCtrl',['$scope','$ionicActionSheet','$ionicHistory', function ($scope,$ionicActionSheet,$ionicHistory) {
+    .controller('CategoryListCtrl',['$scope','$ionicActionSheet','$ionicHistory','CategoryService','productService','popupService', function ($scope,$ionicActionSheet,$ionicHistory,CategoryService,productService,popupService) {
+      $scope.$on('$stateChangeSuccess',function (event,toState,toParams,fromState,fromParams) {
+        $scope.showInfo='无小分类进入大分类';
+        if(fromState.name=='app.product-list'){
+          $scope.showInfo='全部商品';
+        }
+      });
       $scope.categories = [
         {
           ID: 1,
@@ -109,7 +115,7 @@
         },
       ];
       $scope.activeCategory = {};
-      $scope.activeCategory={};
+      $scope.activeSubCategory = {};
       if ($scope.categories.length > 0) {
         $scope.activeCategory = $scope.categories[0];
       }
@@ -118,7 +124,7 @@
           $scope.activeCategory = $scope.categories[index];
         }
       };
-      $scope.selaCategory = function (data) {
+      $scope.selectSubCategory = function (data) {
         console.log(data);
         $scope.activeSubCategory = data;
         $ionicHistory.goBack();
@@ -150,9 +156,11 @@
       $scope.gotoCategoryAdd=function () {
         location.href='#/app/category-add/' +$scope.activeCategory.ID + '/' +$scope.activeCategory.Name;
       }
-      $scope.selectSubCategory = function (data) {
-        $scope.activeSubCategory=0;
-      };
+      $scope.$watch('activeSubCategory',function (newValue,oldValue) {
+        if(newValue.ID){
+          CategoryService.updateCategory($scope.activeSubCategory);
+        }
+      })
     }
     ]);
 })();

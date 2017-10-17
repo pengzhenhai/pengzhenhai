@@ -1,14 +1,14 @@
 <ion-view view-title="店铺设置">
   <ion-nav-buttons side="left">
-    <a class="button button-clear button-icon ion-ios-arrow-back"ng-click="goBack"></a>
+    <a class="button button-clear button-icon ion-ios-arrow-back"ng-click="goBack()"></a>
     </ion-nav-buttons>
   <ion-content>
     <div class="list list-inset">
-      <a class="item item-icon-right">
+      <a class="item item-icon-right" ui-sref="app.shop">
         店铺设置
         <i class="icon ion-chevron-right icon-accessory"></i>
         </a>
-      <a class="item item-icon-right">
+      <a class="item item-icon-right" ui-sref="app.change-password">
       密码
         <i class="icon ion-chevron-right icon-accessory"></i>
       </a>
@@ -16,22 +16,22 @@
 
     <div class="list list-inset">
       <a class="item item-icon-right">
-        店铺设置
+        关于我们
         <i class="icon ion-chevron-right icon-accessory"></i>
       </a>
       <a class="item item-icon-right">
-        密码
+        联系客服：1055130420
+        <i class="icon ion-chevron-right icon-accessory"></i>
+      </a>
+      <a class="item item-icon-right">
+        版本号：1.8.6
         <i class="icon ion-chevron-right icon-accessory"></i>
       </a>
     </div>
 
     <div class="list list-inset">
-      <a class="item item-icon-right">
-        店铺设置
-        <i class="icon ion-chevron-right icon-accessory"></i>
-      </a>
-      <a class="item item-icon-right">
-        密码
+      <a class="item item-icon-right" ng-click="login()">
+        安全退出
         <i class="icon ion-chevron-right icon-accessory"></i>
       </a>
     </div>
