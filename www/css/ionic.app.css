@@ -9819,6 +9819,7 @@ a.button {
   height: 25vw;
   display: flex;
   align-items: center;
+  margin-top: -1px;
   border: 1px solid black; }
 
 .quick-action-item + .quick-action-item {
@@ -9828,7 +9829,7 @@ a.button {
   height: auto; }
 
 .quick-actions {
-  margin-left: 1px; }
+  margin-bottom: 1px; }
 
 .quick-actions + .quick-actions {
   margin-top: -1px; }
@@ -9836,7 +9837,7 @@ a.button {
 .income {
   font-size: 18px; }
 
-.yun {
+.yuan {
   font-size: 10px; }
 
 .side-background {
@@ -9851,6 +9852,12 @@ a.button {
   color: #828282;
   border-color: #4e4e4e; }
 
+.side-menu-version {
+  border-radius: 2px;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-bottom: 3px; }
+
 .category-content-left {
   width: 40%;
   float: left; }
@@ -9860,7 +9867,7 @@ a.button {
   margin-left: 40%; }
 
 .active-item {
-  background-color: #fff;
+  border-color: #fff;
   border-left: 4px solid #FF6A3C; }
 
 .toast-container {
@@ -9868,17 +9875,18 @@ a.button {
   bottom: 50px;
   width: 100%;
   opacity: 0;
-  -webkit-transition: opacity0 .8s;
+  -webkit-transition: opacity 0.8s;
+  transition: opacity 0.8s;
   z-index: 10; }
   .toast-container.active {
     opacity: 1; }
 
 .toast-message {
-  width: 270px;
+  width: 220px;
   margin: 5px auto;
   padding: 5px;
   background-color: #444;
   text-align: center;
   color: #fff;
-  border-radius: 7px;
+  border-radius: 12px;
   font-size: 14px; }
